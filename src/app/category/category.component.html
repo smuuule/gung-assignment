@@ -1,12 +1,11 @@
-<p *ngIf="!isCategory(category)">{{category.name}}</p>
+<tr *ngIf="!isCategory(category)">
+  <td>{{category.id}}</td>
+  <td>{{category.name}}</td>
+  <td>{{category.extra}}</td>
+</tr>
 
 <div *ngIf="isCategory(category)">
-  <h5> Category: {{category.name}} </h5>
-      <ul *ngFor="let child of filtered">
-        <li>
-          <app-category [category]="child"></app-category>
-        </li>
-      </ul>
+  <div *ngFor="let child of filtered">
+    <app-category [category]="child"></app-category>
+  </div>
 </div>
-
-
